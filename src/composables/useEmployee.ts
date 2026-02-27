@@ -4,12 +4,14 @@ import type { Employee } from '../types/Employee';
 import { storage } from '../Utils/storage';
 
 const STORAGE_KEY = 'employee'; 
-export function useEmployee(){
+
 
     // state
-    const employees = ref<Employee[]>(
-        storage.get<Employee[]>(STORAGE_KEY) ?? []
-    );
+const employees = ref<Employee[]>(
+    storage.get<Employee[]>(STORAGE_KEY) ?? []
+);
+   
+export function useEmployee(){
 
     // Auto id  
     const nextId = (): number => {
@@ -26,13 +28,28 @@ export function useEmployee(){
             completionDate: employee.completionDate || '',
         });
     };
+
+    //delete
+    const deleteEmployee = (id: number) => {
+        employees.value = employees.value.filter(e => e.id !== id)
+    }
+
+
+    //update
+    const updateEmployee = (emp: Employee) => {
+        const index = employees.value.findIndex(e => e.id === emp.id)
+        if (index !== -1) {
+            employees.value[index] = { ...emp }
+        }
+    }
+
  
     // STORAGE SYNC
     watch(employees, (newEmployees) => {
         storage.set(STORAGE_KEY, newEmployees);
     }, { deep: true });
-     
-    return {employees, addEmployee, }; 
+
+    return {employees, addEmployee, deleteEmployee, updateEmployee }; 
 }
 
 function today(): string {

@@ -1,14 +1,17 @@
 
-import { reactive  } from "vue";
+import { reactive, ref  } from "vue";
 import { useEmployee } from "../composables/useEmployee";   
 import { Status, StatusType } from "../constants/Status";
 import { Priority, PriorityType } from "../constants/Priority";
-import { Asign, AsignType } from "../constants/Asign"; 
+import { Asign, AsignType } from "../constants/Asign";
+import type { Employee } from "../types/Employee";
 
 
 export function useEmployeeForm(){
  
-    const { addEmployee  } = useEmployee();
+    const isEdit = ref(false)
+    const editingId = ref<number | null>(null)
+    const { addEmployee, deleteEmployee, updateEmployee  } = useEmployee();
     
     // Form State
     const employeeForm = reactive({  
@@ -56,13 +59,27 @@ export function useEmployeeForm(){
         addEmployee(form);
         Object.assign(form, employeeForm); 
     } 
- 
+
+
+
+    //update
+    const onEdit = (employee: Employee) => {
+        Object.assign(form, employeeForm)
+        isEdit.value = true
+        editingId.value = employee.id
+    }
+
+    //remove 
+    const onRemove = (id: number) => {
+        deleteEmployee(id)
+    }
+
     // Reset
     const resetForm = () => {
         Object.assign(form, employeeForm);
     } 
 
-    return { form,  onSubmit, resetForm,   employeeTheader, employeeTbody,  };
+    return { onSubmit, resetForm, onRemove, onEdit, form,  employeeTheader, employeeTbody};
 }
 
 function today(): string {

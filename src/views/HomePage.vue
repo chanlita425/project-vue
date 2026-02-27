@@ -2,10 +2,10 @@
 <script setup lang="ts">
  
     import { useEmployee } from '../composables/useEmployee';
-    import { useEmployeeForm,  } from '../composables/useEmployeeForm';
+    import { useEmployeeForm } from '../composables/useEmployeeForm'; 
 
     const { employees } = useEmployee();
-    const { employeeTheader, employeeTbody } = useEmployeeForm();
+    const { employeeTheader, employeeTbody, onRemove } = useEmployeeForm();
    
 </script> 
 <template>
@@ -30,7 +30,7 @@
                     </td>
                     <td>  
                         <button type="submit" class="btn btn-sm btn-primary me-2 ">Update</button>
-                        <button class="btn btn-sm btn-danger">Delete</button> 
+                        <button type="button" class="btn btn-sm btn-danger" @click="onRemove(emp.id)"> Delete </button>
                     </td>
                 </tr> 
             </tbody>    
