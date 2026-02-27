@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;  
+}
+
+.dashboard_header{
+  height: 20%;
+  border: 2px solid #b2aef2;
+  background-color: #000000;  
+}
+.dashboard_menu{
+  width: 100%;
+  border: 2px solid #ffffff; 
+
+}
+.dashboard_body{
+  width: 100%;
+  height: auto;
+  /* border: 6px solid #b2aef2; */
+  background-color: #ffffff;  
+  padding: 50px;
+}
+  
+.task_employee{
+  width: 60%;
+  height: 100%;
+  padding: 40px 15rem;
+  margin: 0 auto;
+  border: 6px solid #767171;
+  border-radius: 40px;
+  background-color: #e4e4e4;
+  max-height: 800px; 
+  overflow: auto;
+}
+.task_employee::-webkit-scrollbar {
+  display: none;
+}
+.task_employee {
+  scrollbar-width: none;  
+}
+ 
+ 
