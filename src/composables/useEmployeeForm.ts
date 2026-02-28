@@ -4,6 +4,7 @@ import { useEmployee } from "../composables/useEmployee";
 import { Status, StatusType } from "../constants/Status";
 import { Priority, PriorityType } from "../constants/Priority";
 import { Asign, AsignType } from "../constants/Asign";
+import { Task, TaskType } from "../constants/Task";
 import type { Employee } from "../types/Employee"; 
 
 const isEdit = ref(false)
@@ -18,11 +19,12 @@ export function useEmployeeForm(){
         title           : '',
         description     : '',
         priority        : Priority.MEDIUM    as PriorityType,
-        status          : Status.IN_PROGRESS as StatusType,
         assignedBy      : Asign.Admin        as AsignType,
         dueDate         : today(),
         asingDate       : today(),
-        completionDate  : '--/--/----'
+        completionDate  : '--/--/----',
+        status          : Status.IN_PROGRESS as StatusType,
+        task            : [Task.Documentation ] as TaskType[]         
     });
 
     //header fields
@@ -34,7 +36,8 @@ export function useEmployeeForm(){
         'Due Date', 
         'Asign Date', 
         'Completion Date', 
-        'Status'
+        'Status',
+        'Task'
     ]);
 
     // body fields
@@ -46,7 +49,8 @@ export function useEmployeeForm(){
         'dueDate', 
         'asingDate', 
         'completionDate', 
-        'status'
+        'status',
+        'task'
     ]); 
 
     // Form  

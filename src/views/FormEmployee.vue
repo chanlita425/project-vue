@@ -4,12 +4,14 @@
     import { Asign } from '../constants/Asign';
     import { Priority } from '../constants/Priority';
     import { Status } from '../constants/Status';
+    import { Task } from '../constants/Task';
     import { useRouter } from 'vue-router';
 
     const router = useRouter(); 
     const asignOp    = Object.values(Asign);
     const priorityOp = Object.values(Priority);
     const statusOp   = Object.values(Status);
+    const taskOp    = Object.values(Task);
     const { form, onSubmit, onResetForm, isEdit } = useEmployeeForm();
 
     function handleSubmit() {
@@ -72,6 +74,14 @@
                     <option v-for="status in statusOp" :value="status">{{status}}</option>
                 </select>
             </div> 
+
+            <div class="mb-3">
+                <label class="form-label">Task</label><br>
+                <div v-for="task in taskOp" :key="task" class="form-check form-check-inline">
+                    <input :value="task" v-model="form.task" :id="'task-'+task" class="form-check-input" type="checkbox" >
+                    <label class="form-check-label" :for="'task-'+task">{{ task }} </label>
+                </div>
+            </div>
 
             <div class="mt-5">
                 <button type="button" @click="onResetForm" class=" btn btn-danger me-4 " >Cancel</button>

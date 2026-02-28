@@ -33,10 +33,13 @@
             </thead>
 
             <tbody>
-                <tr v-for="emp in employees" :key="emp.id"> 
+                <tr v-for="emp in employees" :key="emp.id" > 
                     <td>{{ emp.id }}</td>
-                    <td v-for="field in employeeTbody" :key="field">
-                        {{ emp[field as keyof typeof emp] }}
+                    <td v-for="field in employeeTbody" :key="field" >
+                        {{ Array.isArray(emp[field as keyof typeof emp]) 
+                            ? (emp[field as keyof typeof emp] as string[]).join(', ') 
+                            : emp[field as keyof typeof emp] 
+                        }}
                     </td>
                     <td>  
                         <button @click="handleUpdate(emp)" class="btn btn-primary btn-sm me-2">Update</button>                

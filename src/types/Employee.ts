@@ -4,9 +4,10 @@ export interface Employee {
     title: string;
     description: string;
     priority: string;
-    status: string;
     assignedBy: string;
     dueDate: string ;
     asingDate: string;
     completionDate: string;
+    status: string;
+    task : string[];
 }
