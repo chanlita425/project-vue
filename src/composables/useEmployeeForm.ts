@@ -1,15 +1,18 @@
 
-import { reactive  } from "vue";
+import { reactive, ref  } from "vue";
 import { useEmployee } from "../composables/useEmployee";   
 import { Status, StatusType } from "../constants/Status";
 import { Priority, PriorityType } from "../constants/Priority";
-import { Asign, AsignType } from "../constants/Asign"; 
+import { Asign, AsignType } from "../constants/Asign";
+import type { Employee } from "../types/Employee"; 
 
+const isEdit = ref(false)
+const editingId = ref<number | null>(null)
+let _instance: any = null;
+const { addEmployee, deleteEmployee, updateEmployee, getEmployeeById  } = useEmployee();
 
 export function useEmployeeForm(){
- 
-    const { addEmployee  } = useEmployee();
-    
+    if (_instance) return _instance;
     // Form State
     const employeeForm = reactive({  
         title           : '',
@@ -51,18 +54,47 @@ export function useEmployeeForm(){
         ...employeeForm
     });
 
-    // Submit
-    const onSubmit = () => {
-        addEmployee(form);
-        Object.assign(form, employeeForm); 
-    } 
- 
+    const onEdit = (employee: Employee) => {
+        Object.assign(form, employee)
+        isEdit.value = true
+        editingId.value = employee.id
+    }
+
+    //update && create
+    const onSubmit = (afterSubmit?: (action: 'add' | 'update') => void) => {
+
+        let action: 'add' | 'update' = 'add'; 
+
+        if (isEdit.value && editingId.value !== null) {
+            const existEmployee = getEmployeeById(editingId.value);
+            if (!existEmployee) return;
+
+            const updatedEmployee = { ...existEmployee, ...form };
+            updateEmployee(updatedEmployee);
+
+            isEdit.value = false
+            editingId.value = null
+            action = 'update'; 
+        } else {
+            addEmployee({ ...form });
+            action = 'add';
+        }
+        Object.assign(form, employeeForm)
+        if (afterSubmit) afterSubmit(action);
+    }
+
+    //remove 
+    const onRemove = (id: number) => {
+        deleteEmployee(id)
+    }
+
     // Reset
-    const resetForm = () => {
+    const onResetForm = () => {
         Object.assign(form, employeeForm);
     } 
-
-    return { form,  onSubmit, resetForm,   employeeTheader, employeeTbody,  };
+    
+    _instance ={ onSubmit, onResetForm, onRemove, onEdit, isEdit, form,  employeeTheader, employeeTbody};
+    return  _instance;
 }
 
 function today(): string {

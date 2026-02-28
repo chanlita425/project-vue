@@ -3,25 +3,34 @@
     import { useEmployeeForm } from '../composables/useEmployeeForm';
     import { Asign } from '../constants/Asign';
     import { Priority } from '../constants/Priority';
-    import { Status } from '../constants/Status';   
+    import { Status } from '../constants/Status';
+    import { useRouter } from 'vue-router';
 
+    const router = useRouter(); 
     const asignOp    = Object.values(Asign);
     const priorityOp = Object.values(Priority);
     const statusOp   = Object.values(Status);
-    const { form, onSubmit, resetForm  } = useEmployeeForm();
-   
+    const { form, onSubmit, onResetForm, isEdit } = useEmployeeForm();
+
+    function handleSubmit() {
+        onSubmit((action) => {
+            alert(action === 'add' ? 'Task added successfully!' : 'Task updated successfully!');
+            router.push({ name: 'HomePage' });   
+        });
+    }
+
 </script>
 
 <template>
-      <div class="dashboard_body bg-info bg-opacity-10  ">
+    <div class="dashboard_body bg-info bg-opacity-10  ">
         
-        <form @submit.prevent="onSubmit" class="task_employee was-validated">
-             <h3 class=" mb-4"> 
-                    Add New Task 
+        <form @submit.prevent="handleSubmit" class="task_employee was-validated">
+            <h3 @click="addNewEmployee" class=" mb-4"> 
+                {{ isEdit ? 'Update Task' : 'Add Task ' }}
             </h3>
- 
+
             <div class="mb-3">
-                <label for="title" class="form-label">Task Title *</label>
+                <label for="title" class="form-label">  Task Title *</label>
                 <input v-model="form.title" type="text"  class="form-control" id="title" name="title" placeholder="Enter task title" required>
             </div>
 
@@ -32,7 +41,7 @@
 
             <div class="mb-3">
                 <label for="employeeId" class="form-label">Assigned By *</label>
-                <select v-model="form.assignedBy" class="form-select" id="employeeId" name="employeeId" required>
+                <select v-model="form.assignedBy" class="form-select" id="assignedBy" name="assignedBy" required>
                     <option v-for = 'asignBy in asignOp' :value="asignBy">{{asignBy}}</option> 
                 </select>
             </div>
@@ -43,7 +52,7 @@
                     <option v-for="priority in priorityOp" :value="priority" :key="priority">{{priority}}</option>
                 </select>
             </div>
-  
+
             <div class="mb-3">
                 <label for="assignDate" class="form-label">Assign Date *</label>
                 <input v-model="form.asingDate" type="date" class="form-control" id="assignDate" name="assignDate" required>
@@ -65,12 +74,11 @@
             </div> 
 
             <div class="mt-5">
-                <button type="button" @click="resetForm" class=" btn btn-danger me-4 " >Cancel</button>
-                <button type="submit" class="btn btn-primary"> Submit </button>
+                <button type="button" @click="onResetForm" class=" btn btn-danger me-4 " >Cancel</button>
+                <button type="submit" class="btn btn-primary"> {{ isEdit ? 'Update Task' : 'Add Task' }} </button>
             </div>
-            
         </form> 
+
     </div> 
 </template>
 
- 
