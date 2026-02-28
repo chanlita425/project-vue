@@ -24,7 +24,7 @@ export function useEmployeeForm(){
         asingDate       : today(),
         completionDate  : '--/--/----',
         status          : Status.IN_PROGRESS as StatusType,
-        task            : [Task.Documentation ] as TaskType[]         
+        task            : [Task.FEATURE ] as TaskType[]         
     });
 
     //header fields

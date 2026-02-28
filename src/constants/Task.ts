@@ -1,10 +1,10 @@
 
 export const Task = { 
     
-    Bug             : 'Bug',
-    Feature         : 'Feature',
-    Documentation   : 'Documentation',
-    Research        : 'Research'
+    BUG             : 'Bug',
+    FEATURE         : 'Feature',
+    DOCUMENTATION   : 'Documentation',
+    RESEARCH        : 'Research'
 
 } as const;
 
