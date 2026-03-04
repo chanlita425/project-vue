@@ -1,23 +1,25 @@
 import { createRouter, createWebHistory } from "vue-router";
-import FormEmployee from "../views/FormEmployee.vue";
-import Dashboard from "../layouts/Dashboard.vue";
-import HomePage from "../views/HomePage.vue";
+import MainLayout    from "../layouts/MainLayout.vue"; 
+import DashboardView from "../views/Dashboard/DashboardView.vue";
+import EmployeesView from "../views/Employees/EmployeeView.vue";
+
 
 const routes = [
   {
     path: "/",
-    component: Dashboard,
+    component: MainLayout,
     children: [
       {
-        path: "FormEmployee",
-        name: "FormEmployee",
-        component: FormEmployee,
+        path: "",
+        name: "Dashboard",
+        component: DashboardView,
       },
       {
-        path: "HomePage",
-        name: "HomePage",
-        component: HomePage,
+        path: "employees",
+        name: "Employees",
+        component: EmployeesView,
       },
+      
     ]
   },
 ];

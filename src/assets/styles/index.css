@@ -1,43 +1,107 @@
+/* @import "tailwindcss"; */
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;  
 }
 
-.dashboard_header{
-  height: 20%;
-  border: 2px solid #b2aef2;
-  background-color: #000000;  
-}
-.dashboard_menu{
+/* Main Layout */
+.main-layout {
+  display: flex;
   width: 100%;
-  border: 2px solid #ffffff; 
+  height: 100vh;   
+}
+
+/* ---------------------------------------------------- */
+
+/* Sidebar Container */
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  padding: 15px;
+  background-color: #acdbeb; 
+  background: linear-gradient(to right, #acdbeb,#d3e5eb);
+  color: rgb(40, 38, 38);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e5e7eb;
 
 }
-.dashboard_body{
-  width: 100%;
-  height: auto;
-  /* border: 6px solid #b2aef2; */
-  background-color: #ffffff;  
-  padding: 50px;
-}
-  
-.task_employee{
-  width: 60%;
-  height: 100%;
-  padding: 40px 15rem;
+
+/* Header */
+.sidebar .header {
+  padding: 25px 10px;
+  font-size: 25px; 
+  letter-spacing: 0.5px;
   margin: 0 auto;
-  border: 6px solid #767171;
-  border-radius: 40px;
-  background-color: #e4e4e4;
-  max-height: 800px; 
-  overflow: auto;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(173, 215, 210, 0.1);
+  font-family: 'Abril Fatface', serif; 
 }
-.task_employee::-webkit-scrollbar {
-  display: none;
+
+/* Navigation */
+.sidebar .navigation {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-bottom: 15px;
+  gap: 6px;
+  border-radius: 10px;
+  border: 1px solid #5f6d88; 
 }
-.task_employee {
-  scrollbar-width: none;  
+
+/* Nav Link */
+.sidebar .nav-link {
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 800;
+  font-size: 18px; 
+  border-radius: 10px;
+  /* border: 1px solid rgb(191, 180, 180); */
+  font-family: 'Emilys Candy', cursive;
+  transition: all 0.2s ease;
 }
- 
- 
+
+/* Hover */
+.sidebar .nav-link:hover {
+  background-color: rgb(48, 48, 54);
+  color: rgb(255, 255, 255);
+}
+
+/* Active Link */
+.sidebar .active-link {
+  background-color: rgb(149, 149, 153);
+  color: rgb(255, 255, 255);
+}
+
+/* Footer */
+.sidebar .footer{
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Abril Fatface', serif; 
+  color: #0f1b2d; 
+}
+
+/* ------------------------------------------------- */
+
+/* Main Content */
+.main-content {
+  flex: 1;  
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(53, 56, 54);
+}
+
+/* Page Content */
+.page-content {
+  flex: 1; 
+  padding: 20px;
+
+}
+
