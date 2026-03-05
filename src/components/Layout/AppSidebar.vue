@@ -1,36 +1,58 @@
 
 <script setup >
- 
+    import { useRoute } from 'vue-router'
+
+    defineProps({
+        isOpen: Boolean
+    })
+
+    const emit = defineEmits(['close'])
+    const route = useRoute()
+
+    const handleClick = () => {
+        if (window.innerWidth <= 768) {
+            emit('close')
+        }
+    }
 </script>
 
-<template> 
-    <div class="sidebar">
-        <div class="header">
-            <b>Task Management</b>
+<template>
+    <aside :class="['app-sidebar', { 'app-sidebar-open': isOpen }]">
+    
+        <div class="app-sidebar_header">
+            <span class="app-sidebar_logo">TM</span>
+            <h3>Task Management</h3>
         </div>
-        <nav class="navigation">
-            <RouterLink to="/" class="nav-link" exact-active-class="active-link" >
-                Dashboard
+
+        <nav class="app-sidebar_nav">
+            <RouterLink to="/" class="app-sidebar_link" @click="handleClick" exact>
+                <i class="fa-solid fa-house app-sidebar_icon"></i>
+                <span>Dashboard</span>
             </RouterLink>
 
-            <RouterLink to="/employees" class="nav-link" exact-active-class="active-link" >
-                Project
+            <RouterLink to="/employees" class="app-sidebar_link" @click="handleClick">
+                <i class="fa-solid fa-folder app-sidebar_icon"></i>
+                <span>Project</span>
             </RouterLink>
 
-            <RouterLink to="/team" class="nav-link" exact-active-class="active-link" >
-                Tasks
+            <RouterLink to="/team" class="app-sidebar_link" @click="handleClick">
+                <i class="fa-solid fa-list-check app-sidebar_icon"></i>
+                <span>Tasks</span>
             </RouterLink>
 
-            <RouterLink to="/reports" class="nav-link" exact-active-class="active-link" >
-                Reports
+            <RouterLink to="/reports" class="app-sidebar_link" @click="handleClick">
+                <i class="fa-solid fa-chart-line app-sidebar_icon"></i>
+                <span>Reports</span>
             </RouterLink>
 
-             <RouterLink to="/setting" class="nav-link" exact-active-class="active-link" >
-                Setting
+            <RouterLink to="/setting" class="app-sidebar_link" @click="handleClick">
+                 <i class="fa-solid fa-gear app-sidebar_icon"></i>
+                <span>Setting</span>
             </RouterLink>
-        </nav> 
-        <div class="footer"> 
-            <b>footer</b> 
+        </nav>
+
+        <div class="app-sidebar_footer">
+            <span> <i class="fa-solid fa-code"></i> 2026</span>
         </div>
-    </div>
+    </aside>
 </template>

@@ -11,8 +11,11 @@
   "dependencies": {
     "@fontsource/abril-fatface": "^5.2.7",
     "@fontsource/alfa-slab-one": "^5.2.8",
+    "@fontsource/dm-serif-display": "^5.2.8",
     "@fontsource/emilys-candy": "^5.2.8",
     "@fontsource/inter": "^5.2.8",
+    "@fontsource/roboto-slab": "^5.2.8",
+    "@fontsource/spectral": "^5.2.8",
     "@fortawesome/fontawesome-free": "^7.2.0",
     "bootstrap": "^5.3.8",
     "vue": "^3.5.13",
