@@ -52,7 +52,8 @@
         </nav>
 
         <div class="app-sidebar_footer">
-            <span> <i class="fa-solid fa-code"></i> 2026</span>
+            <span> <i class="fa-solid fa-code"> </i></span>
+            <span>Create by CHAN LITA</span>
         </div>
     </aside>
 </template>

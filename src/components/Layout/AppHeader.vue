@@ -18,7 +18,8 @@
     </div>
 
     <div class="app-header_right">
-      <button class="app-header_notification">
+      <button class="app-header_notification"> 
+        <span><i class="fa-solid fa-magnifying-glass"></i></span>
         <span><i class="fa-solid fa-bell"></i></span>
         <span class="app-header_notification-dot"></span>
       </button>

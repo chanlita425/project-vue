@@ -3,8 +3,8 @@ import App from "./App.vue";
 import router from "./router"; 
 
 // file css
-// import "./assets/styles/index.css";
-import "./assets/styles/dashboard.css"
+import "./assets/styles/Dashboard.css";
+import "./assets/styles/MainLayout.css"
 
 // font awesome
 import '@fortawesome/fontawesome-free/css/all.css'
