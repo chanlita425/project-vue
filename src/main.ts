@@ -5,6 +5,7 @@ import router from "./router";
 // file css
 import "./assets/styles/Dashboard.css";
 import "./assets/styles/MainLayout.css"
+import "./assets/styles/Task.css"
 
 // font awesome
 import '@fortawesome/fontawesome-free/css/all.css'

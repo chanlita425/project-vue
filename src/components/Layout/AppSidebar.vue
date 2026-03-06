@@ -30,22 +30,22 @@
                 <span>Dashboard</span>
             </RouterLink>
 
-            <RouterLink to="/employees" class="app-sidebar_link" @click="handleClick">
-                <i class="fa-solid fa-folder app-sidebar_icon"></i>
-                <span>Project</span>
-            </RouterLink>
-
-            <RouterLink to="/team" class="app-sidebar_link" @click="handleClick">
+            <RouterLink to="/task" class="app-sidebar_link" @click="handleClick">
                 <i class="fa-solid fa-list-check app-sidebar_icon"></i>
                 <span>Tasks</span>
             </RouterLink>
 
-            <RouterLink to="/reports" class="app-sidebar_link" @click="handleClick">
+            <RouterLink to="/project" class="app-sidebar_link" @click="handleClick">
+                <i class="fa-solid fa-folder app-sidebar_icon"></i>
+                <span>Project</span>
+            </RouterLink>
+
+            <RouterLink to="/#" class="app-sidebar_link" @click="handleClick">
                 <i class="fa-solid fa-chart-line app-sidebar_icon"></i>
                 <span>Reports</span>
             </RouterLink>
 
-            <RouterLink to="/setting" class="app-sidebar_link" @click="handleClick">
+            <RouterLink to="/#" class="app-sidebar_link" @click="handleClick">
                  <i class="fa-solid fa-gear app-sidebar_icon"></i>
                 <span>Setting</span>
             </RouterLink>

@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import MainLayout    from "../layouts/MainLayout.vue"; 
-import DashboardView from "../views/Dashboard/DashboardView.vue";
-import EmployeesView from "../views/Employees/EmployeeView.vue";
-
+import DashboardView from "../views/DashboardView.vue";
+import TaskView from "../views/TaskView.vue";
+import ProjectView from "../views/ProjectView.vue";
 
 const routes = [
   {
@@ -15,11 +15,15 @@ const routes = [
         component: DashboardView,
       },
       {
-        path: "employees",
-        name: "Employees",
-        component: EmployeesView,
+        path: "task",
+        name: "Task",
+        component: TaskView,
       },
-      
+      {
+        path: "project",
+        name: "Project",
+        component: ProjectView,
+      },
     ]
   },
 ];

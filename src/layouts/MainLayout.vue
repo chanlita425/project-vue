@@ -20,7 +20,7 @@
 
     <div class="app-layout_main">
       <AppHeader @toggleSidebar="toggleSidebar" />
-
+      
       <main class="app-layout_content">
         <div class="app-layout_card">
           <RouterView />

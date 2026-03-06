@@ -2,8 +2,8 @@
 <script setup lang="ts">
     import { ref } from 'vue'
     import { useRouter } from 'vue-router'
-    import { useEmployee } from '../../composables/useEmployee';
-    import { useEmployeeForm } from '../../composables/useEmployeeForm'; 
+    import { useEmployee } from '../composables/useEmployee';
+    import { useEmployeeForm } from '../composables/useEmployeeForm'; 
 
     const router = useRouter() 
     const { employees } = useEmployee();
@@ -74,7 +74,6 @@
             </div>
 
             <div class="dashboard-header_action">
-                 
                 <div class="dashboard-date-group">
                     <input type="date" v-model="fromDate" class="dashboard-action_date"/>
                     <span class="dashboard-date-divider">To</span>
@@ -88,9 +87,9 @@
                     <option>On Hold</option>
                 </select>
 
-                <button class="dashboard-header_task-btn">
+                <!-- <button class="dashboard-header_task-btn">
                     + New Task
-                </button>
+                </button> -->
             </div>    
         </div>
 
