@@ -6,6 +6,7 @@ import router from "./router";
 import "./assets/styles/Dashboard.css";
 import "./assets/styles/MainLayout.css"
 import "./assets/styles/Task.css"
+import "./assets/styles/pagination.css"
 
 // font awesome
 import '@fortawesome/fontawesome-free/css/all.css'
@@ -28,5 +29,10 @@ import '@fontsource/spectral/400.css'
 import '@fontsource/spectral/500.css'
 import '@fontsource/spectral/600.css'
 import '@fontsource/spectral/700.css'
+
+// font-family: "Barlow", sans-serif;
+import "@fontsource/barlow/400.css"
+import "@fontsource/barlow/500.css"
+import "@fontsource/barlow/700.css"
 
 createApp(App).use(router).mount("#app");

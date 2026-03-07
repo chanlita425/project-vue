@@ -1,0 +1,110 @@
+
+.task-container {
+  min-height: fit-content;
+  padding: 40px; 
+}
+
+/* --- header --- */
+.search-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dashboard-header_search {
+  padding: 8px 12px 8px 32px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #717f96;
+  color: #ffffff;
+  font-size: 13px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.dashboard-header_search::placeholder {
+  color: #d1d5db;
+}
+
+.search-wrapper .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #d1d5db;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.dashboard-header_sort {
+  background: #717f96;
+  color: #ffffff;
+  border: 1px solid #334155;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.dashboard-header_status:hover,
+.dashboard-header_sort:hover,
+.dashboard-header_search:focus {
+  border-color: #1d4ed8;
+  box-shadow: 0 0 5px rgba(29, 78, 216, 0.5);
+}
+
+/* --- body --- */
+.task-container_table {
+  width: 100%;
+  margin:30px 0px 0px 0px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #eceff7;
+  box-shadow: 0 10px 30px rgba(70, 68, 68, 0.25); 
+}
+
+.task-container_row-header {
+  display: flex;
+  background-color: #6c90bfd7;
+  font-family: "Emilys Candy", cursive;
+  color: #162c4b; 
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 15px;
+}
+
+.task-container_row-header .task-column {
+  flex: 1;
+  padding: 0 12px;
+}
+
+.task-container_row-body .task-row {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  transition:0.2s;
+  cursor: pointer;
+}
+
+.task-container_row-body .task-row:nth-child(even) {
+  background-color: #dcdce463;
+}
+
+.task-container_row-body .task-row:hover {
+  background-color: #f0f4ff;
+}
+
+.task-container_row-body .task-column {
+  flex: 1;
+  padding: 0 15px;
+}
+
+/* --- footer --- */
+.task-container_pagination{
+  margin:40px 20px 0px 20px;
+  bottom: 0;
+}

@@ -1,12 +1,64 @@
- 
-<script setup lang="ts">
+
+<script setup>
+
+    import { useRouter } from 'vue-router'
+    import AppPagination from '../components/base/AppPagination.vue';
 
 </script>
-
 <template>
-    <h1 class="text-2xl font-semibold">Project</h1>
+    <div class="task-container">
 
+        <div class="dashboard-header">
+            <div class="dashboard-header_title">
+                    <h3>Project</h3>
+                    <p class="dashboard-header_date">Thursday, March 5, 2026</p>
+            </div>
 
+            <div class="dashboard-header_action">
+                <div class="search-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Search tasks..." class="dashboard-header_search"/>
+                </div>
 
+                <select class="dashboard-header_status">
+                    <option>All Priority</option>
+                    <option>UI/UX</option>
+                    <option>Designer</option>
+                    <option>On Hold</option>
+                </select>
+
+                <select class="dashboard-header_sort">
+                    <option>Sort by Date</option>
+                    <option>Sort by Name</option>
+                    <option>Sort by Status</option>
+                </select>
+
+                <button class="dashboard-header_task-btn">
+                    + New Task
+                </button>
+            </div>
+        </div>
+
+        <div class="task-container_table">
+            <div class="task-container_row-header">
+                    <div class="task-column">title</div>
+                    <div class="task-column">team</div>
+                    <div class="task-column">status</div>
+                    <div class="task-column">priority</div>
+            </div>
+
+            <div class="task-container_row-body">
+                    <div class="task-row" v-for="i in 10" :key="i">
+                        <div class="task-column">Q1 performance review</div>
+                        <div class="task-column">HR Department · Admin</div>
+                        <div class="task-column">Low</div>
+                        <div class="task-column">Mar 15, 2026</div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="task-container_pagination">
+            <AppPagination />
+        </div>
+    </div>
 </template>
-

@@ -20,7 +20,7 @@
 
     <div class="app-layout_main">
       <AppHeader @toggleSidebar="toggleSidebar" />
-      
+
       <main class="app-layout_content">
         <div class="app-layout_card">
           <RouterView />
@@ -31,3 +31,4 @@
     <div v-if="isSidebarOpen" class="app-layout_overlay" @click="isSidebarOpen = false"></div>
   </div>
 </template>
+

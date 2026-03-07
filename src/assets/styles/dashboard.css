@@ -1,24 +1,24 @@
 /* priority */
-.high .dot {background: #ef4444;}
+.high .dot {background:  #ff0909;}
 .medium .dot {background: #facc15;}
-.low .dot {background:rgba(89, 153, 237, 0.518);}
+.low .dot {background: rgba(59, 131, 246, 0.501);}
 
 /* status */
 .in-progress {
-    background: rgba(250, 204, 21, 0.15);
-    color: #c6aa3d;
+    background: rgba(250, 204, 21, 0.685);
+    color: #56513b;
 }
 .completed {
-    background: rgba(34, 197, 94, 0.15);
-    color: #22c55e;
+    background: rgba(34, 197, 94, 0.551);
+    color: #313a34;
 }
 .on-hold {
-    background: rgba(59, 130, 246, 0.15);
-    color: #3b82f6;
+    background: rgba(59, 131, 246, 0.501);
+    color: #122a50;
 }
 .overdue {
-  background: rgba(239, 68, 68, 0.15);
-  color: #ef4444;
+  background: rgba(239, 68, 68, 0.42);
+  color: #ff0909;
 }
 
 
@@ -87,7 +87,7 @@
 }
 
 /* Status */
-.dashboard-header_status {
+.dashboard-header_status {  
     background: #717f96;
     color: #ffffff;
     border: 1px solid #334155;
@@ -133,8 +133,7 @@
     background: rgba(250, 251, 252, 0.7);
     border: 1px solid  #717f96;
     padding: 20px;
-    border-radius: 16px;
-    font-family: "Emilys Candy", cursive;
+    border-radius: 16px; 
     letter-spacing: 1px;
     transition: 0.3s;
 }
@@ -146,12 +145,14 @@
 }
 
 .dashboard-content_card-title {
-    font-size: 14px;
-    color: #1e5aafb1; 
+    font-family: "Emilys Candy", cursive;
+    font-size: 15px;
+    color: #0e3770; 
 }
 
 .dashboard-content_card h2 {
-    font-size: 26px;
+    font-family: "Spectral", serif;
+    font-size: 22px;
     margin-top: 10px;
     color: #647284; 
 }
@@ -159,11 +160,11 @@
 /* ------------- Body --------------- */
 
 .dashboard-body_box {
-  background: #d9e1f3;
-  border: 1px solid #c9daf5;
-  border-radius: 18px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(70, 68, 68, 0.25);
+    background: #d9e1f3;
+    border: 1px solid #c9daf5;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(70, 68, 68, 0.25);
 }
 
 /* Recent */
@@ -217,22 +218,22 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #3f4b5a;
+    color: #3f4b5a; 
     font-family: "Emilys Candy", cursive;
     
 }
 
 /* body row */
 .dashboard-task_title {
-    color: rgb(79, 83, 87);
+    color: #1d3455;
     font-weight: 500;
     font-size: 14px;
-    font-family: "Spectral", serif;
+    font-family: "Spectral", serif; 
 }
 
 .dashboard-task_sub {
     font-size: 12px;
-    color: #94a3b8;
+    color: rgb(79, 83, 87);
     margin-top: 4px;
 }
 
@@ -250,7 +251,7 @@
     align-items: center;
     gap: 6px;
     font-size: 13px;
-    color: #8097b4;
+    color: rgb(79, 83, 87);
 }
 
 .dashboard-priority .dot {
@@ -277,7 +278,7 @@
 /* Due Date */
 .dashboard-due_date {
     font-size: 13px;
-    color: #94a3b8;
+    color: rgb(79, 83, 87);
 }
 
 .overdue-date {

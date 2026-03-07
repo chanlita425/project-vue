@@ -8,27 +8,13 @@
     box-sizing: border-box;
 }
 
-/* Improve text rendering */
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
-
-/* Remove list styles */
-ul, ol {
-    list-style: none;
-}
-
-/* Images responsive */
 img {
     max-width: 100%;
     display: block;
-}
-
-/* Remove default link styles */
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 /* ---- app Layout ----*/
