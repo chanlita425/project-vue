@@ -45,6 +45,7 @@
                     <div class="task-column">Assignee</div>
                     <div class="task-column">Due Date</div>
                     <div class="task-column">Status</div>
+                    <div class="task-column">Action</div>
                </div>
 
                <div class="task-container_row-body">
@@ -53,6 +54,10 @@
                          <div class="task-column">Chan Lita</div>
                          <div class="task-column">March 10, 2026</div>
                          <div class="task-column">In Progress</div>
+                         <div class="task-column" >
+                              <button><i class="fa-solid fa-file-pen"></i></button>
+                              <button><i class="fa-regular fa-trash-can"></i></button>
+                         </div>
                     </div>
                </div>
           </div>

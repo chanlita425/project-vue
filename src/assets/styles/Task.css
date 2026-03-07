@@ -110,24 +110,39 @@
 }
 
 
+
 /* ------------- Responsive -------------- */
 
 /* ---------- Tablet ---------- */
 @media (max-width: 992px) {
-   /* .dashboard-date-group,
-    .dashboard-date-divider {
-        width: 100%; 
-        text-align: center;
-        color: white;
-    } */
+
+  .dashboard-header_search,
+  .dashboard-header_sort,
+  .search-wrapper,
+  .dashboard-header_status {
+    width: 100%;
+  }
+ 
+  .task-column:nth-child(n+5),
+  .task-column:nth-child(n+5) { 
+    display: none;  
+  }
 }
 
-/* ---------- Mobile ---------- */
+/* ---------- Mobile ---------- */ 
 @media (max-width: 770px) {
+
+  .task-column:nth-child(n+4) {
+    display: none;  
+  }
 
 }
 
 /* ---------- Small Mobile ---------- */
 @media (max-width: 500px) { 
+
+  .task-column:nth-child(n+3){
+    display: none;  
+  }
 
 }
