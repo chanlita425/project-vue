@@ -7,6 +7,7 @@ import "./assets/styles/Dashboard.css";
 import "./assets/styles/MainLayout.css"
 import "./assets/styles/Task.css"
 import "./assets/styles/pagination.css"
+import "./assets/styles/formDesign.css"
 
 // font awesome
 import '@fortawesome/fontawesome-free/css/all.css'

@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import MainLayout    from "../layouts/MainLayout.vue"; 
 import DashboardView from "../views/DashboardView.vue";
-import TaskView from "../views/TaskView.vue";
-import ProjectView from "../views/ProjectView.vue";
+import TaskView from "../views/Tasks/TaskView.vue";
+import TaskFormView from "../views/Tasks/TaskFormView.vue";
+import ProjectView from "../views/Projects/ProjectView.vue";
+// import ProjectForm from "../views/Projects/ProjectFormView.vue";
 
 const routes = [
   {
@@ -24,6 +26,12 @@ const routes = [
         name: "Project",
         component: ProjectView,
       },
+      {
+        path: "taskForm",
+        name: "TaskForm",
+        component: TaskFormView,
+      },
+
     ]
   },
 ];

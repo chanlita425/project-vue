@@ -2,8 +2,13 @@
 <script setup>
 
      import { useRouter } from 'vue-router'
-     import AppPagination from '../components/base/AppPagination.vue';
+     import AppPagination from '../../components/base/AppPagination.vue'  
 
+
+     const router = useRouter() 
+     const AddTAsk = ( ) => {
+          router.push({ name: 'TaskForm' })
+     }
 </script>
 <template>
      <div class="task-container">
@@ -31,9 +36,8 @@
                          <option>Sort by Date</option>
                          <option>Sort by Name</option>
                          <option>Sort by Status</option>
-                    </select>
-
-                    <button class="dashboard-header_task-btn">
+                    </select> 
+                    <button @click="AddTAsk" class="dashboard-header_task-btn">
                          + New Task
                     </button>
                </div>
@@ -55,16 +59,15 @@
                          <div class="task-column">March 10, 2026</div>
                          <div class="task-column">In Progress</div>
                          <div class="task-column" >
-                              <button><i class="fa-solid fa-file-pen"></i></button>
-                              <button><i class="fa-regular fa-trash-can"></i></button>
+                              <button class="btn edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                              <button class="btn delete"><i class="fa-regular fa-trash-can"></i></button>
                          </div>
                     </div>
                </div>
           </div>
 
           <div class="task-container_pagination">
-               <AppPagination />
+               <AppPagination /> 
           </div>
-
      </div>
 </template>

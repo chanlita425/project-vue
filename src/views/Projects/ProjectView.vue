@@ -1,8 +1,8 @@
 
 <script setup>
 
-    import { useRouter } from 'vue-router'
-    import AppPagination from '../components/base/AppPagination.vue';
+    import { useRouter } from 'vue-router'; 
+    import AppPagination from '../../components/base/AppPagination.vue';
 
 </script>
 <template>
@@ -34,7 +34,7 @@
                 </select>
 
                 <button class="dashboard-header_task-btn">
-                    + New Task
+                    + New Project
                 </button>
             </div>
         </div>

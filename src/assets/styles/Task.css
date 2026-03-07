@@ -101,6 +101,13 @@
 .task-container_row-body .task-column {
   flex: 1;
   padding: 0 15px;
+  display: flex;
+  gap: 10px; 
+}
+
+.task-container_row-body .task-column {
+  display: flex;
+  gap: 10px; 
 }
 
 /* --- footer --- */
@@ -123,7 +130,6 @@
     width: 100%;
   }
  
-  .task-column:nth-child(n+5),
   .task-column:nth-child(n+5) { 
     display: none;  
   }

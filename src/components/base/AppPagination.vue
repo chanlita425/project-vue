@@ -26,6 +26,5 @@
       <button class="pagination-btn">10</button>
       <button class="pagination-btn">Next &raquo;</button>
     </div>
-
   </div>
 </template>
