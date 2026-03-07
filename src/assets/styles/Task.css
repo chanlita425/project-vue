@@ -108,3 +108,26 @@
   margin:40px 20px 0px 20px;
   bottom: 0;
 }
+
+
+/* ------------- Responsive -------------- */
+
+/* ---------- Tablet ---------- */
+@media (max-width: 992px) {
+   /* .dashboard-date-group,
+    .dashboard-date-divider {
+        width: 100%; 
+        text-align: center;
+        color: white;
+    } */
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 770px) {
+
+}
+
+/* ---------- Small Mobile ---------- */
+@media (max-width: 500px) { 
+
+}
