@@ -299,18 +299,14 @@
 
 /* Avatar */
 .dashboard-avatar {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    width: 100%;
+    height: 45px;  
+    font-size: 13px; 
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 600;
-    color: #ffffff;
-    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
-}
+    padding:5px; 
+    color: rgb(79, 83, 87);
+} 
 
 /* Due Date */
 .dashboard-due_date {
@@ -359,6 +355,14 @@
 
     .dashboard-task_row div:nth-child(n+4) {
         display: none;
+    }
+
+    .dashboard-avatar_status{
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
 }

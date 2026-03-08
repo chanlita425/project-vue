@@ -2,9 +2,9 @@
 export const Asign = {
     
     Admin         : 'Admin',
-    Team_Lead     : 'Team Lead',
+    Team_Lead     : 'Leader',
     Manager       : 'Manager',
-    HR_Department : 'HR Department'
+    HR_Department : 'HR'
     
 } as const;
  

@@ -104,7 +104,9 @@
                         </div> 
 
                         <div class="dashboard-avatar">
+                            
                                 {{ task.assignedBy}}
+                            
                         </div>  
 
                         <div class="dashboard-due_date" :class="{ 'overdue-date': task.status === 'Overdue' }">
