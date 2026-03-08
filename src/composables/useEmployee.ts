@@ -48,7 +48,7 @@ export function useEmployee(){
         storage.set(STORAGE_KEY, newEmployees);
     }, { deep: true });
 
-    return {employees, addEmployee, deleteEmployee, updateEmployee, getEmployeeById }; 
+    return {employees,today, addEmployee, deleteEmployee, updateEmployee, getEmployeeById }; 
 }
 
 function today(): string {
