@@ -35,9 +35,9 @@ export function useEmployeeForm(){
         'Assigned By', 
         'Due Date', 
         'Asign Date', 
-        'Completion Date', 
+        'Completion', 
         'Status',
-        'Task'
+        'Project'
     ]);
 
     // body fields

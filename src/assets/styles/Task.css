@@ -70,8 +70,10 @@
   font-family: "Emilys Candy", cursive;
   color: #162c4b; 
   font-weight: 600;
+  
   letter-spacing: 1px;
   padding: 15px;
+  
 }
 
 .task-container_row-header .task-column {
@@ -110,6 +112,11 @@
   gap: 10px; 
 }
 
+.task-container_row-body .task-column:nth-child(3) {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
 /* --- footer --- */
 .task-container_pagination{
   margin:40px 20px 0px 20px;
@@ -121,7 +128,7 @@
 /* ------------- Responsive -------------- */
 
 /* ---------- Tablet ---------- */
-@media (max-width: 992px) {
+@media (max-width: 1300px) {
 
   .dashboard-header_search,
   .dashboard-header_sort,
@@ -129,26 +136,33 @@
   .dashboard-header_status {
     width: 100%;
   }
- 
-  .task-column:nth-child(n+5) { 
-    display: none;  
+
+  .task-column:nth-child(n+4):nth-last-child(n+2) {
+    display: none;
   }
 }
 
 /* ---------- Mobile ---------- */ 
 @media (max-width: 770px) {
 
-  .task-column:nth-child(n+4) {
-    display: none;  
+  .task-column:nth-child(n+3):nth-last-child(n+2) {
+    display: none;
   }
-
 }
 
 /* ---------- Small Mobile ---------- */
 @media (max-width: 500px) { 
 
-  .task-column:nth-child(n+3){
-    display: none;  
+  .task-column:nth-child(2) {
+    display: block;
+  }
+
+  .task-column:last-child {
+    display: block;
+  }
+
+  .btn.edit  {
+    margin-bottom: 10px; 
   }
 
 }

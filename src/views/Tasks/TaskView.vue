@@ -1,12 +1,23 @@
 
-<script setup>
+<script setup lang="ts">
 
      import { useRouter } from 'vue-router'
      import AppPagination from '../../components/base/AppPagination.vue'  
-
-
+     import { useEmployee } from '../../composables/useEmployee'; 
+     import { useEmployeeForm } from '../../composables/useEmployeeForm'
+     import { Status } from '../../constants/Status'
+     
      const router = useRouter() 
+     const { employees } = useEmployee();
+     const {form, employeeTheader, employeeTbody, onRemove, onEdit } = useEmployeeForm();
+     const statusOp = Object.values(Status)
+
+
      const AddTAsk = ( ) => {
+          router.push({ name: 'TaskForm' })
+     }
+     const handleUpdate = (emp: any) => {
+          onEdit(emp)                        
           router.push({ name: 'TaskForm' })
      }
 </script>
@@ -25,11 +36,10 @@
                          <input type="text" placeholder="Search tasks..." class="dashboard-header_search"/>
                     </div>
 
-                    <select class="dashboard-header_status">
-                         <option>All Status</option>
-                         <option>In Progress</option>
-                         <option>Completed</option>
-                         <option>On Hold</option>
+                    <select class="dashboard-header_status" v-model="form.status">
+                         <option v-for="s in statusOp" :key="s" :value="s">
+                              {{ s }}
+                         </option>
                     </select>
 
                     <select class="dashboard-header_sort">
@@ -37,6 +47,7 @@
                          <option>Sort by Name</option>
                          <option>Sort by Status</option>
                     </select> 
+
                     <button @click="AddTAsk" class="dashboard-header_task-btn">
                          + New Task
                     </button>
@@ -45,22 +56,29 @@
 
           <div class="task-container_table">
                <div class="task-container_row-header">
-                    <div class="task-column">Task Name</div>
-                    <div class="task-column">Assignee</div>
-                    <div class="task-column">Due Date</div>
-                    <div class="task-column">Status</div>
-                    <div class="task-column">Action</div>
+                     <div class="task-column"  ">
+                         id
+                    </div> 
+                    <div class="task-column" v-for="header in employeeTheader" :key="header">
+                         {{header}}
+                    </div> 
+                     <div class="task-column"  >
+                         Action
+                    </div> 
                </div>
 
                <div class="task-container_row-body">
-                    <div class="task-row" v-for="i in 10" :key="i">
-                         <div class="task-column">Design Homepage</div>
-                         <div class="task-column">Chan Lita</div>
-                         <div class="task-column">March 10, 2026</div>
-                         <div class="task-column">In Progress</div>
+                    <div class="task-row" v-for="emp in employees" :key="emp.id">
+                         <div class="task-column">{{ emp.id }}</div>
+                         <div class="task-column" v-for="field in employeeTbody" :key="emp.id + field">
+                              {{ Array.isArray(emp[field as keyof typeof emp]) 
+                                   ? (emp[field as keyof typeof emp] as string[]).join(', ') 
+                                   : emp[field as keyof typeof emp] 
+                              }}
+                         </div> 
                          <div class="task-column" >
-                              <button class="btn edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                              <button class="btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                              <button  @click="handleUpdate(emp)" class="btn edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                              <button  @click="onRemove(emp.id)" class="btn delete"><i class="fa-regular fa-trash-can"></i></button>
                          </div>
                     </div>
                </div>

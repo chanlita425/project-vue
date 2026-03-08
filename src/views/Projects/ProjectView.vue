@@ -41,10 +41,11 @@
 
         <div class="task-container_table">
             <div class="task-container_row-header">
-                    <div class="task-column">title</div>
-                    <div class="task-column">team</div>
-                    <div class="task-column">status</div>
+                    <div class="task-column">Id</div>
+                    <div class="task-column">project</div>
                     <div class="task-column">priority</div>
+                    <div class="task-column">Date</div>
+                    <div class="task-column">Action</div>
             </div>
 
             <div class="task-container_row-body">
@@ -53,6 +54,10 @@
                         <div class="task-column">HR Department · Admin</div>
                         <div class="task-column">Low</div>
                         <div class="task-column">Mar 15, 2026</div>
+                        <div class="task-column" >
+                            <button class="btn edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button class="btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
                     </div>
             </div>
         </div>
